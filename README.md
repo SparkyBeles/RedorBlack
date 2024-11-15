@@ -1,6 +1,7 @@
 # RedorBlack
 A  simple game of card based on color.
 #
+[If you wanna test the mockup idea](https://www.figma.com/proto/2bcTC0vegmLBT223HFQKmo/Welcome-frame?node-id=14-46&node-type=canvas&t=z0sggPfgS7WEsiy0-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=14%3A46)
 
 # Showcase the lineup
 
