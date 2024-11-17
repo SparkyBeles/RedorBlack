@@ -34,6 +34,13 @@ A  simple game of card based on color.
 
 ## 
 
+## App Icone
+
+![Group 3](https://github.com/user-attachments/assets/b9763cb6-1582-4896-957c-2989ff6905f6)
+
+##
+
+
 ## UML diagram
 
 <img width="816" alt="Untitled" src="https://github.com/user-attachments/assets/c2e42da6-187f-4d20-9387-48aa14b71524">
