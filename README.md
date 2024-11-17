@@ -36,7 +36,7 @@ A  simple game of card based on color.
 
 ## UML diagram
 
-<img width="816" alt="Uml diagram for card game RedorBlack draft 2" src="https://github.com/user-attachments/assets/b66b2b60-918c-498b-bfea-e2e5e073f781">
+<img width="816" alt="Untitled" src="https://github.com/user-attachments/assets/c2e42da6-187f-4d20-9387-48aa14b71524">
 
 ##
 
