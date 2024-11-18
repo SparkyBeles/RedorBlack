@@ -16,8 +16,14 @@
 ![Welcome frame](https://github.com/user-attachments/assets/1ab40cec-b688-414b-8d02-34d7693a2265)
 #
 ---
-
-
+# GitFlow
+| Branch | Purpose  |
+| ------ | -------- | 
+| [Main](https://github.com/SparkyBeles/RedorBlack.git) | Final product|
+| [Dev](https://github.com/SparkyBeles/RedorBlack.git) | Development branch |
+| [Feat](https://github.com/SparkyBeles/RedorBlack.git) | Feature branch  |
+| [Doc](https://github.com/SparkyBeles/RedorBlack.git) | Documentation branch |
+| [Release](https://github.com/SparkyBeles/RedorBlack.git) | Release branch |
 ## App Icone
 ![Group 3](https://github.com/user-attachments/assets/b9763cb6-1582-4896-957c-2989ff6905f6)
 ##
