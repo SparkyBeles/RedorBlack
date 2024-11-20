@@ -6,18 +6,17 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.redorblack.databinding.ActivityMainBinding
+import com.example.redorblack.databinding.ActivityAboutBinding
 
-class MainActivity : AppCompatActivity() {
+class About : AppCompatActivity() {
+    lateinit var binding: ActivityAboutBinding
 
-    lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
-
+        binding = ActivityAboutBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -27,32 +26,18 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-   // Start button
-    binding.startButton.setOnClickListener{
-        val intent = Intent(this,ModeOption::class.java)
-        startActivity(intent)
+        binding.dismissButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
 
-    }
-
-
-    // Quit button
-    binding.quitButton.setOnClickListener{
-        finish()
-        System.exit(0)
-    }
-
-
-    binding.aboutButton.setOnClickListener{
-        val intent = Intent(this, About::class.java)
-        startActivity(intent)
-
-    }
+        }
 
 
 
 
 
     }
+
 
 
 
