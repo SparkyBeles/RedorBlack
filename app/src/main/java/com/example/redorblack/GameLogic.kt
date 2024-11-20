@@ -1,23 +1,22 @@
 package com.example.redorblack
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.redorblack.databinding.ActivityMainBinding
+import com.example.redorblack.databinding.ActivityGameLogicBinding
 
-class MainActivity : AppCompatActivity() {
+class GameLogic : AppCompatActivity() {
 
-    lateinit var binding: ActivityMainBinding
+    lateinit var binding: ActivityGameLogicBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
-
+        binding = ActivityGameLogicBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -25,21 +24,5 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-    binding.startButton.setOnClickListener{
-        val intent = Intent(this,ModeOption::class.java)
-        startActivity(intent)
-
     }
-    binding.quitButton.setOnClickListener{
-        finish()
-        System.exit(0)
-    }
-
-
-    }
-
-
-
-
 }
