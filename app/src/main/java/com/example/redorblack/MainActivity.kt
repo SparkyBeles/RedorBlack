@@ -26,15 +26,30 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+
+   // Start button
     binding.startButton.setOnClickListener{
         val intent = Intent(this,ModeOption::class.java)
         startActivity(intent)
 
     }
+
+
+    // Quit button
     binding.quitButton.setOnClickListener{
         finish()
         System.exit(0)
     }
+
+
+    binding.aboutButton.setOnClickListener{
+        val intent = Intent(this, About::class.java)
+        startActivity(intent)
+
+    }
+
+
+
 
 
     }
