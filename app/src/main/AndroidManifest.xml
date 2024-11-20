@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Redorblack"
         tools:targetApi="31">
         <activity
+            android:name=".About"
+            android:exported="false" />
+        <activity
             android:name=".FinalWiningScreen"
             android:exported="false" />
         <activity
