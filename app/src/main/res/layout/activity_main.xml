@@ -10,54 +10,55 @@
 
     >
 
-    <TextView
-        android:id="@+id/welcomeText"
-        android:layout_width="412dp"
-        android:layout_height="420dp"
-        android:fontFamily="monospace"
-        android:lineSpacingExtra="8sp"
-        android:text="Game Instructions: \nPick either Red or Black. If you guess the wrong color, the game ends.\n  \nHow long can you keep your winning streak alive? "
-        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
-        android:textColor="@color/black"
-        android:textColorLink="#000000"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageView
+        android:layout_width="157dp"
+        android:layout_height="122dp"
+        android:background="@mipmap/logo"
+        app:layout_constraintBottom_toTopOf="@+id/startButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.424" />
+        app:layout_constraintVertical_bias="0.244" />
 
     <Button
         android:id="@+id/startButton"
-        android:layout_width="149dp"
-        android:layout_height="86dp"
-        android:text="Start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:background="@color/green"
+        android:text="Start"
         app:iconTint="#F44336"
         app:layout_constraintBottom_toBottomOf="parent"
+
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.938"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.936"
-
-        />
+        app:layout_constraintVertical_bias="0.375" />
 
     <Button
         android:id="@+id/quitButton"
-        android:layout_width="149dp"
-        android:layout_height="86dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+
         android:background="@color/red"
         android:text="Quit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.936"
+        app:layout_constraintTop_toBottomOf="@+id/aboutButton"
+        app:layout_constraintVertical_bias="0.088" />
 
-        />
+    <Button
+        android:id="@+id/aboutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="About"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
