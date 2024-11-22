@@ -1,6 +1,7 @@
 package com.example.redorblack
 
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -16,8 +17,13 @@ class FinalWiningScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        binding = ActivityFinalWiningScreenBinding.inflate(layoutInflater)
+        //  Screen Orientation lock on portrait.
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
 
+
+
+        //  Binding method for finding ID.
+        binding = ActivityFinalWiningScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -27,8 +33,15 @@ class FinalWiningScreen : AppCompatActivity() {
 
 
 
+        //  Restart button.
         binding.button5.setOnClickListener {
 
+
+        }
+
+
+        //  Quit button.
+        binding.button6.setOnClickListener {
 
         }
 
