@@ -1,6 +1,7 @@
 package com.example.redorblack
 
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +16,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
 
@@ -47,6 +50,8 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
 
     }
+
+
 
 
 
