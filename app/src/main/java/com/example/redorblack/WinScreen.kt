@@ -1,5 +1,6 @@
 package com.example.redorblack
 
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -15,13 +16,39 @@ class WinScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        binding = ActivityWinScreenBinding.inflate(layoutInflater)
 
+        //  Screen Orientation lock on portrait.
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
+
+
+        //  Binding method for finding ID.
+        binding = ActivityWinScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+
+
+
+        //  Red button.
+        binding.button.setOnClickListener {
+
+        }
+
+
+
+        //  Black button.
+        binding.button2.setOnClickListener {
+
+        }
+
+
     }
+
+
+
+
 }

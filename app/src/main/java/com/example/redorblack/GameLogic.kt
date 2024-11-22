@@ -16,8 +16,9 @@ class GameLogic : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        binding = ActivityGameLogicBinding.inflate(layoutInflater)
 
+        //  Binding method for finding ID.
+        binding = ActivityGameLogicBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -26,6 +27,7 @@ class GameLogic : AppCompatActivity() {
         }
 
 
+        //  Cards list for red cards.
         val redCards = listOf(
             R.mipmap.redcard0,
             R.mipmap.redcard1,
@@ -37,6 +39,7 @@ class GameLogic : AppCompatActivity() {
         )
 
 
+        //  Cards list for black cards.
         val blackCards = listOf(
             R.mipmap.blackcard0,
             R.mipmap.blackcard1,
