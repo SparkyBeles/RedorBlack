@@ -1,5 +1,6 @@
 package com.example.redorblack
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -23,6 +24,37 @@ class ModeOption : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+
+
+        binding.easyButtonMode.setOnClickListener {
+            val intent = Intent(this, EasyMode::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+            startActivity(intent)
+            finish()
+
+        }
+
+
+        binding.hardButtonMode.setOnClickListener {
+            val intent = Intent(this, HardMode::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+            startActivity(intent)
+            finish()
+
+        }
+
+        binding.luckyButtonMode.setOnClickListener {
+            val intent = Intent(this, LuckyMode::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+            startActivity(intent)
+            finish()
+
+        }
+
+
+
+
 
 
 

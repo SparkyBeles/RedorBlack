@@ -6,59 +6,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@mipmap/background"
+    android:background="@mipmap/backgroundcolor"
 
     >
 
-    <ImageView
-        android:layout_width="157dp"
-        android:layout_height="122dp"
-        android:background="@mipmap/logo"
-        app:layout_constraintBottom_toTopOf="@+id/startButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.244" />
 
     <Button
         android:id="@+id/startButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:background="@color/green"
-        android:text="Start"
-        app:iconTint="#F44336"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="236dp"
 
+
+        android:background="@drawable/customstartbutton"
+        app:layout_constraintBottom_toTopOf="@+id/aboutButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.375" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/quitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
 
-        android:background="@color/red"
-        android:text="Quit"
+        android:layout_marginBottom="220dp"
+        android:background="@drawable/customquitbutton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/aboutButton"
-        app:layout_constraintVertical_bias="0.088" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/aboutButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="About"
+        android:background="@drawable/customaboutbutton"
+        app:layout_constraintBottom_toTopOf="@+id/quitButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/startButton" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

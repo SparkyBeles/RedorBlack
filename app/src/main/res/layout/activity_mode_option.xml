@@ -6,40 +6,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ModeOption"
-    android:background="@mipmap/background"
+    android:background="@mipmap/backgroundcolor"
     >
 
     <Button
         android:id="@+id/easyButtonMode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Easy"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="236dp"
+        android:layout_marginBottom="1dp"
+        android:background="@drawable/customeasybutton"
+        app:layout_constraintBottom_toTopOf="@+id/hardButtonMode"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.231" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/hardButtonMode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="Hard"
+        android:background="@drawable/customhardbutton"
+        app:layout_constraintBottom_toTopOf="@+id/luckyButtonMode"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/easyButtonMode" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/luckyButtonMode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Lucky"
+        android:layout_marginBottom="220dp"
+        android:background="@drawable/customluckybutton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hardButtonMode"
-        app:layout_constraintVertical_bias="0.12" />
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

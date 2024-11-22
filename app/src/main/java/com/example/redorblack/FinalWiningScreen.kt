@@ -1,5 +1,6 @@
 package com.example.redorblack
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -23,5 +24,17 @@ class FinalWiningScreen : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+
+
+        binding.button5.setOnClickListener {
+
+
+        }
+
     }
+
+
+
+
 }
