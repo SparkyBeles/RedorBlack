@@ -35,9 +35,6 @@
             android:name=".WinScreen"
             android:exported="false" />
         <activity
-            android:name=".GameLogic"
-            android:exported="false" />
-        <activity
             android:name=".ModeOption"
             android:exported="false" />
         <activity
