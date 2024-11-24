@@ -34,13 +34,16 @@ class LoseScreen : AppCompatActivity() {
 
 
 
-        binding.imageView2
+        //  First Image in imageview is a defaultCard without color.
+        binding.imageView2.setImageResource(R.mipmap.defaultcard)
 
 
 
 
         //  Green button Restart.
         binding.button3.setOnClickListener {
+
+            binding.imageView2.setImageResource(card.cardValue)
             intent = Intent(this, ModeOption::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
            startActivity(intent)

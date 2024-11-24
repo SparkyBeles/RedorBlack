@@ -13,6 +13,7 @@ import com.example.redorblack.databinding.ActivityEasyModeBinding
 
 
 class EasyMode : AppCompatActivity() {
+    //  Global instance
     lateinit var binding: ActivityEasyModeBinding
     lateinit var cardManager: CardManager
     lateinit var card: Card
@@ -26,6 +27,7 @@ class EasyMode : AppCompatActivity() {
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
 
 
+        // local Instance of cardManager.
         cardManager = CardManager()
 
 
@@ -41,7 +43,7 @@ class EasyMode : AppCompatActivity() {
         }
 
 
-        //  CardList
+        //  CardList in immutable list.
         val cardList = listOf(
             Card("red",R.mipmap.redcard0),
             Card("red",R.mipmap.redcard1),
@@ -64,9 +66,13 @@ class EasyMode : AppCompatActivity() {
 
         card = shuffledCards.first()
 
-        binding.imageView.setImageResource(card.cardValue)
+
+        //  First Image in imageview is a defaultCard without color.
+        binding.imageView.setImageResource(R.mipmap.defaultcard)
 
 
+
+        //  Function for checking a card color and comparing in against button.
         fun checkCard(guessColor: String){
             if (guessColor == card.color){
                 intent = Intent(this,WinScreen::class.java)
@@ -79,13 +85,14 @@ class EasyMode : AppCompatActivity() {
                 startActivity(intent)
                 finish()
             }
-
         }
+
+
 
 
         //  Red button
         binding.redButton.setOnClickListener {
-
+            binding.imageView.setImageResource(card.cardValue)
             checkCard("red")
 
         }

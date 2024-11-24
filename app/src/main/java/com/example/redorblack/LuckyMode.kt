@@ -62,7 +62,7 @@ class LuckyMode : AppCompatActivity() {
 
 
 
-        binding.imageView6.setImageResource(card.cardValue)
+        binding.imageView6.setImageResource(R.mipmap.defaultcard)
 
 
 
@@ -90,6 +90,7 @@ class LuckyMode : AppCompatActivity() {
 
         //  Red button.
         binding.redButtonLucky.setOnClickListener {
+            binding.imageView6.setImageResource(card.cardValue)
             checkCard("red")
 
         }
@@ -97,6 +98,7 @@ class LuckyMode : AppCompatActivity() {
 
         //  Black button.
         binding.blackButtonLucky.setOnClickListener {
+            binding.imageView6.setImageResource(card.cardValue)
 
             checkCard("black")
         }

@@ -70,13 +70,19 @@ class HardMode : AppCompatActivity() {
 
         card = shuffledCards.first()
 
-        binding.imageView4.setImageResource(card.cardValue)
+
+        //  First Image in imageview is a defaultCard without color.
+        binding.imageView4.setImageResource(R.mipmap.defaultcard)
+
+
+
+
 
         //  Red button.
         binding.redButtonHard.setOnClickListener {
+            binding.imageView4.setImageResource(card.cardValue)
 
             checkCard("red")
-
 
         }
 
