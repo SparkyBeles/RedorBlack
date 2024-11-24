@@ -1,9 +1,58 @@
 package com.example.redorblack
 
+import android.content.Context
+import android.content.Intent
+import android.widget.ImageView
+import com.example.redorblack.databinding.ActivityEasyModeBinding
+
 //  Card parameter.
-class Card(val color: String, val cardValue: Int)
+class Card(val color: String, val cardValue: Int) {
+
+
+    // Method for showing the card in ImageView.
+    fun showCard(imageView: ImageView) {
+        imageView.setImageResource(cardValue)
+    }
+
+    // Method for checking if the guessed color matches the card's color.
+    fun checkGuess(guessColor: String): Boolean {
+        return color == guessColor
+    }
+
+    // Method for showing current card and updating the ImageView.
+    fun showCurrentCard(
+        shuffledCards: List<Card>,
+        currentCardIndex: Int,
+        binding: ActivityEasyModeBinding
+    ) {
+        if (currentCardIndex < shuffledCards.size) {
+            shuffledCards[currentCardIndex].showCard(binding.imageView)
+        }
+    }
+
+    // Method for handling the win screen intent.
+    fun showWinScreen(context: Context) {
+        val intent = Intent(context, WinScreen::class.java)
+        context.startActivity(intent)
+    }
+
+    // Method for handling the lose screen intent.
+    fun showLoseScreen(context: Context) {
+        val intent = Intent(context, LoseScreen::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+        context.startActivity(intent)
+    }
+
+}
+
+
+
+
+
+
 
 class CardManager {
+
 
     //  CardList
     val cardList = listOf(
@@ -23,27 +72,4 @@ class CardManager {
         Card("black",R.mipmap.blackcard6),
 
         )
-
-    //  Different amount of card shuffled for different mode.
-    fun shuffleEasyCard() = cardList.shuffled().take(3)
-    fun shuffleHardCard() = cardList.shuffled().take(6)
-    fun shuffleLuckyCards() = cardList.shuffled().take(12)
-
-    //  Method for checking the card color and counting cards.
-    fun checkCard(){}
-
-    //  Method for showing the card in imageview.
-    fun showCard(){}
-
-    //  Method for keeping track of points.
-    fun pointTracer(){}
-
-
-
-
-
-
-
-
-
 }
