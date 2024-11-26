@@ -1,48 +1,27 @@
 package com.example.redorblack
 
-import android.content.Context
 import android.content.Intent
-import android.widget.ImageView
-import com.example.redorblack.databinding.ActivityEasyModeBinding
+import android.content.Context
 
 //  Card parameter.
-class Card(val color: String, val cardValue: Int) {
+data class Card(val color: String, val cardValue: Int) {
 
 
-    // Method for showing the card in ImageView.
-    fun showCard(imageView: ImageView) {
-        imageView.setImageResource(cardValue)
-    }
+    fun checkCard(guessColor: String, context: Context) {
+      val intent = if (guessColor == color) {
+            Intent(context, WinScreen::class.java)
+        } else {
 
-    // Method for checking if the guessed color matches the card's color.
-    fun checkGuess(guessColor: String): Boolean {
-        return color == guessColor
-    }
-
-    // Method for showing current card and updating the ImageView.
-    fun showCurrentCard(
-        shuffledCards: List<Card>,
-        currentCardIndex: Int,
-        binding: ActivityEasyModeBinding
-    ) {
-        if (currentCardIndex < shuffledCards.size) {
-            shuffledCards[currentCardIndex].showCard(binding.imageView)
+            Intent(context, LoseScreen::class.java)
         }
-    }
-
-    // Method for handling the win screen intent.
-    fun showWinScreen(context: Context) {
-        val intent = Intent(context, WinScreen::class.java)
-        context.startActivity(intent)
-    }
-
-    // Method for handling the lose screen intent.
-    fun showLoseScreen(context: Context) {
-        val intent = Intent(context, LoseScreen::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
         context.startActivity(intent)
-    }
 
+        if (context is android.app.Activity){
+            context.finish()
+        }
+
+    }
 }
 
 
@@ -70,6 +49,5 @@ class CardManager {
         Card("black",R.mipmap.blackcard4),
         Card("black",R.mipmap.blackcard5),
         Card("black",R.mipmap.blackcard6),
-
         )
 }

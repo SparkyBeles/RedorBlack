@@ -34,31 +34,13 @@ class LuckyMode : AppCompatActivity() {
 
 
 
-        //  CardList
-        val cardList = listOf(
-            Card("red",R.mipmap.redcard0),
-            Card("red",R.mipmap.redcard1),
-            Card("red",R.mipmap.redcard2),
-            Card("red",R.mipmap.redcard3),
-            Card("red",R.mipmap.redcard4),
-            Card("red",R.mipmap.redcard5),
-            Card("red",R.mipmap.redcard6),
-            Card("black",R.mipmap.blackcard0),
-            Card("black",R.mipmap.blackcard1),
-            Card("black",R.mipmap.blackcard2),
-            Card("black",R.mipmap.blackcard3),
-            Card("black",R.mipmap.blackcard4),
-            Card("black",R.mipmap.blackcard5),
-            Card("black",R.mipmap.blackcard6),
-
-            )
-
-
-        val shuffledCards = cardList.shuffled().take(3)
 
 
 
-        card = shuffledCards.first()
+
+
+
+
 
 
 
@@ -66,22 +48,6 @@ class LuckyMode : AppCompatActivity() {
 
 
 
-
-        //  Checks if the cards is red or black and move to either Win Activity or lose Activity.
-        fun checkCard(guessColor: String){
-            if (guessColor == card.color){
-                intent = Intent(this,WinScreen::class.java)
-                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-                startActivity(intent)
-                finish()
-            }else{
-                intent = Intent(this, LoseScreen::class.java)
-                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-                startActivity(intent)
-                finish()
-            }
-
-        }
 
 
 
@@ -91,7 +57,7 @@ class LuckyMode : AppCompatActivity() {
         //  Red button.
         binding.redButtonLucky.setOnClickListener {
             binding.imageView6.setImageResource(card.cardValue)
-            checkCard("red")
+            card.checkCard("red",this)
 
         }
 
@@ -100,7 +66,7 @@ class LuckyMode : AppCompatActivity() {
         binding.blackButtonLucky.setOnClickListener {
             binding.imageView6.setImageResource(card.cardValue)
 
-            checkCard("black")
+            card.checkCard("black",this)
         }
 
 

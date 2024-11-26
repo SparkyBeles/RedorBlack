@@ -32,25 +32,30 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+
+
    // Start button
     binding.startButton.setOnClickListener{
         val intent = Intent(this,ModeOption::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
         startActivity(intent)
-
+        finish()
     }
+
 
 
     // Quit button
     binding.quitButton.setOnClickListener{
-        finish()
-        System.exit(0)
+      finishAffinity()
     }
+
 
     //  About button.
     binding.aboutButton.setOnClickListener{
         val intent = Intent(this, About::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
         startActivity(intent)
-
+        finish()
     }
 
 
