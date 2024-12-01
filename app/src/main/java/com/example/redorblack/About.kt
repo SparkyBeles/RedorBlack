@@ -1,6 +1,4 @@
 package com.example.redorblack
-
-import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -32,12 +30,10 @@ class About : AppCompatActivity() {
 
 
 
+
         // Dismiss button for the About view.
         binding.dismissButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-            startActivity(intent)
-            finish()
+         buttonFunction.dissMissButton(this)
         }
 
 

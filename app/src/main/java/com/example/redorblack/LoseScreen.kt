@@ -1,5 +1,4 @@
 package com.example.redorblack
-
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -11,6 +10,7 @@ import com.example.redorblack.databinding.ActivityLoseScreenBinding
 class LoseScreen : AppCompatActivity() {
 
     lateinit var binding: ActivityLoseScreenBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,14 +31,23 @@ class LoseScreen : AppCompatActivity() {
 
 
 
-        //  Black button.
+
+
+
+
+
+
+        //  Green button Restart.
         binding.button3.setOnClickListener {
+            buttonFunction.restartButton(this)
+
 
         }
 
 
-        // Red button.
+        // Red button Quit.
         binding.button4.setOnClickListener {
+           buttonFunction.quitButton(this)
 
         }
 

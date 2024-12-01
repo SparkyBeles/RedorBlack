@@ -13,6 +13,7 @@
         android:theme="@style/Theme.Redorblack"
         tools:targetApi="31">
 
+
         <activity
             android:name=".LuckyMode"
             android:exported="false" />
