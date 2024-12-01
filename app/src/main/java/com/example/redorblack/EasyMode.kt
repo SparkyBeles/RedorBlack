@@ -1,10 +1,6 @@
 package com.example.redorblack
-
-
-import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
-import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,7 +12,9 @@ class EasyMode : AppCompatActivity() {
     //  Global instance
     lateinit var binding: ActivityEasyModeBinding
     lateinit var cardManager: CardManager
-    lateinit var card: Card
+
+
+
 
 
 
@@ -27,10 +25,10 @@ class EasyMode : AppCompatActivity() {
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
 
 
+
+
         // local Instance of cardManager.
         cardManager = CardManager()
-
-
 
 
         //  Binding method for finding ID.
@@ -41,8 +39,6 @@ class EasyMode : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-
 
 
 
@@ -62,15 +58,12 @@ class EasyMode : AppCompatActivity() {
 
         //  Red button
         binding.redButton.setOnClickListener {
-            binding.imageView.setImageResource(card.cardValue)
-           card.checkCard("red",this)
 
         }
 
 
         //  Black button.
         binding.blackButton.setOnClickListener {
-            card.checkCard("red",this)
 
         }
 
@@ -81,3 +74,5 @@ class EasyMode : AppCompatActivity() {
 
 
 }
+
+

@@ -1,6 +1,4 @@
 package com.example.redorblack
-
-import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -8,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.redorblack.databinding.ActivityHardModeBinding
-import com.example.redorblack.databinding.ActivityLuckyModeBinding
 
 class HardMode : AppCompatActivity() {
     lateinit var binding: ActivityHardModeBinding
@@ -52,7 +49,7 @@ class HardMode : AppCompatActivity() {
         binding.redButtonHard.setOnClickListener {
             binding.imageView4.setImageResource(card.cardValue)
 
-            card.checkCard("red",this)
+
 
         }
 
@@ -61,7 +58,7 @@ class HardMode : AppCompatActivity() {
         //  Black button.
         binding.blackButtonHard.setOnClickListener {
 
-            card.checkCard("black",this)
+
 
         }
 

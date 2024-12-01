@@ -1,6 +1,5 @@
 package com.example.redorblack
 
-import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -57,7 +56,7 @@ class LuckyMode : AppCompatActivity() {
         //  Red button.
         binding.redButtonLucky.setOnClickListener {
             binding.imageView6.setImageResource(card.cardValue)
-            card.checkCard("red",this)
+
 
         }
 
@@ -66,7 +65,7 @@ class LuckyMode : AppCompatActivity() {
         binding.blackButtonLucky.setOnClickListener {
             binding.imageView6.setImageResource(card.cardValue)
 
-            card.checkCard("black",this)
+
         }
 
 
