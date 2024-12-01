@@ -1,6 +1,5 @@
 package com.example.redorblack
 
-import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -47,7 +46,7 @@ class WinScreen : AppCompatActivity() {
         //  Red button.
         binding.button.setOnClickListener {
 
-            card.checkCard("red",this)
+
 
         }
 
@@ -55,7 +54,7 @@ class WinScreen : AppCompatActivity() {
 
         //  Black button.
         binding.button2.setOnClickListener {
-            card.checkCard("black",this)
+
 
         }
 
