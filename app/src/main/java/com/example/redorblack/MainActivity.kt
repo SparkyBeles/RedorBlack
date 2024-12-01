@@ -1,6 +1,5 @@
 package com.example.redorblack
 
-import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -22,6 +21,8 @@ class MainActivity : AppCompatActivity() {
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
 
 
+
+
         //  Binding method for finding ID.
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -34,28 +35,26 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
+
+
+
    // Start button
     binding.startButton.setOnClickListener{
-        val intent = Intent(this,ModeOption::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-        startActivity(intent)
-        finish()
+      buttonFunction.restartButton(this)
     }
 
 
 
     // Quit button
     binding.quitButton.setOnClickListener{
-      finishAffinity()
+        buttonFunction.quitButton(this)
     }
 
 
     //  About button.
     binding.aboutButton.setOnClickListener{
-        val intent = Intent(this, About::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-        startActivity(intent)
-        finish()
+        buttonFunction.aboutButton(this)
     }
 
 

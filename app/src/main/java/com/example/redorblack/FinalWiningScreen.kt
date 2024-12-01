@@ -1,6 +1,4 @@
 package com.example.redorblack
-
-import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -12,6 +10,7 @@ import com.example.redorblack.databinding.ActivityFinalWiningScreenBinding
 class FinalWiningScreen : AppCompatActivity() {
 
     lateinit var binding: ActivityFinalWiningScreenBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +34,7 @@ class FinalWiningScreen : AppCompatActivity() {
 
         //  Restart button.
         binding.button5.setOnClickListener {
+           buttonFunction.restartButton(this)
 
 
         }
@@ -42,6 +42,7 @@ class FinalWiningScreen : AppCompatActivity() {
 
         //  Quit button.
         binding.button6.setOnClickListener {
+            buttonFunction.quitButton(this)
 
         }
 
