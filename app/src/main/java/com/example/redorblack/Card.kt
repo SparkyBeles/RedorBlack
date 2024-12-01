@@ -1,40 +1,17 @@
 package com.example.redorblack
 
-import android.content.Intent
-import android.content.Context
-
 //  Card parameter.
-data class Card(val color: String, val cardValue: Int) {
-
-
-    fun checkCard(guessColor: String, context: Context) {
-      val intent = if (guessColor == color) {
-            Intent(context, WinScreen::class.java)
-        } else {
-
-            Intent(context, LoseScreen::class.java)
-        }
-        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-        context.startActivity(intent)
-
-        if (context is android.app.Activity){
-            context.finish()
-        }
-
-    }
-}
+data class Card(val color: String, val cardValue: Int) {}
 
 
 
 
 
-
-
-class CardManager {
+open class CardManager {
 
 
     //  CardList
-    val cardList = listOf(
+    val cardList = mutableListOf(
         Card("red",R.mipmap.redcard0),
         Card("red",R.mipmap.redcard1),
         Card("red",R.mipmap.redcard2),
