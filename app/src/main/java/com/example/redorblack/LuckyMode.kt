@@ -10,6 +10,7 @@ import com.example.redorblack.databinding.ActivityLuckyModeBinding
 
 class LuckyMode : AppCompatActivity() {
     lateinit var binding: ActivityLuckyModeBinding
+    lateinit var card: Card
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,14 +35,36 @@ class LuckyMode : AppCompatActivity() {
 
 
 
+
+
+
+
+
+
+
+
+        binding.imageView6.setImageResource(R.mipmap.defaultcard)
+
+
+
+
+
+
+
+
+
         //  Red button.
         binding.redButtonLucky.setOnClickListener {
+            binding.imageView6.setImageResource(card.cardValue)
+
 
         }
 
 
         //  Black button.
         binding.blackButtonLucky.setOnClickListener {
+            binding.imageView6.setImageResource(card.cardValue)
+
 
         }
 

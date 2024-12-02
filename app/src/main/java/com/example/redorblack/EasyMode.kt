@@ -1,6 +1,4 @@
 package com.example.redorblack
-
-
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -11,16 +9,26 @@ import com.example.redorblack.databinding.ActivityEasyModeBinding
 
 
 class EasyMode : AppCompatActivity() {
+    //  Global instance
     lateinit var binding: ActivityEasyModeBinding
+    lateinit var cardManager: CardManager
+
+
+
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-
-
         //  Screen Orientation lock on portrait.
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
+
+
+
+
+        // local Instance of cardManager.
+        cardManager = CardManager()
 
 
         //  Binding method for finding ID.
@@ -39,6 +47,8 @@ class EasyMode : AppCompatActivity() {
 
 
 
+        //  First Image in imageview is a defaultCard without color.
+        binding.imageView.setImageResource(R.mipmap.defaultcard)
 
 
 
@@ -58,15 +68,11 @@ class EasyMode : AppCompatActivity() {
         }
 
 
-
-
     }
 
 
 
 
-
-
-
-
 }
+
+

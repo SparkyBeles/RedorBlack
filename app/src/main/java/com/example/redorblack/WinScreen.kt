@@ -11,6 +11,7 @@ import com.example.redorblack.databinding.ActivityWinScreenBinding
 class WinScreen : AppCompatActivity() {
 
     lateinit var binding: ActivityWinScreenBinding
+    lateinit var card: Card
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,8 +34,19 @@ class WinScreen : AppCompatActivity() {
 
 
 
+
+
+
+
+
+
+        binding.imageView3.setImageResource(card.cardValue)
+
+
         //  Red button.
         binding.button.setOnClickListener {
+
+
 
         }
 
@@ -42,6 +54,7 @@ class WinScreen : AppCompatActivity() {
 
         //  Black button.
         binding.button2.setOnClickListener {
+
 
         }
 
