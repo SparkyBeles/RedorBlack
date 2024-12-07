@@ -37,10 +37,6 @@ open class Logic : CardManager() {
             val card = shuffledCard[currentCard]
             imageView.setImageResource(card.cardValue)
 
-            imageView.postDelayed({
-                imageView.setImageResource(R.mipmap.defaultcard)
-            },1000)
-
             currentCard++
             true
 
