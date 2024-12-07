@@ -10,11 +10,13 @@ import com.example.redorblack.databinding.ActivityFinalWiningScreenBinding
 class FinalWiningScreen : AppCompatActivity() {
 
     lateinit var binding: ActivityFinalWiningScreenBinding
+    var score = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
 
         //  Screen Orientation lock on portrait.
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
@@ -29,6 +31,20 @@ class FinalWiningScreen : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+
+        score = intent.getIntExtra("Score",0)
+        binding.textView.text = "Score: $score"
+
+
+
+        //  Trying to make the gif work.
+        binding.imageView5.setImageResource(R.drawable.winner)
+
+
+
+
+
 
 
 

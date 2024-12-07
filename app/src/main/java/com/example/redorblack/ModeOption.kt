@@ -35,10 +35,7 @@ class ModeOption : AppCompatActivity() {
 
         //  Easy mode button
         binding.easyButtonMode.setOnClickListener {
-            val intent = Intent(this, EasyMode::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-            startActivity(intent)
-            finish()
+          buttonFunction.easyMode(this)
 
         }
 
@@ -46,20 +43,13 @@ class ModeOption : AppCompatActivity() {
 
         //  Hard mode button.
         binding.hardButtonMode.setOnClickListener {
-            val intent = Intent(this, HardMode::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-            startActivity(intent)
-            finish()
+          buttonFunction.hardMode(this)
 
         }
 
         //  Lucky mode button.
         binding.luckyButtonMode.setOnClickListener {
-            val intent = Intent(this, LuckyMode::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-            startActivity(intent)
-            finish()
-
+          buttonFunction.luckyMode(this)
         }
 
 

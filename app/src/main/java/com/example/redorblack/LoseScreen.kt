@@ -10,6 +10,7 @@ import com.example.redorblack.databinding.ActivityLoseScreenBinding
 class LoseScreen : AppCompatActivity() {
 
     lateinit var binding: ActivityLoseScreenBinding
+    var score = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,6 +31,11 @@ class LoseScreen : AppCompatActivity() {
         }
 
 
+        score = intent.getIntExtra("Score",score)
+
+
+        //  Text view for the score.
+        binding.textViewLose.text = "Score: $score"
 
 
 
