@@ -13,12 +13,15 @@ class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
         //  Screen Orientation lock on portrait.
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
+
+
 
 
 
@@ -59,11 +62,8 @@ class MainActivity : AppCompatActivity() {
 
 
 
-
-
-
-
     }
+
 
 
 

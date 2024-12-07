@@ -2,6 +2,7 @@ package com.example.redorblack
 
 import android.content.pm.ActivityInfo
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -11,6 +12,8 @@ import com.example.redorblack.databinding.ActivityLuckyModeBinding
 class LuckyMode : AppCompatActivity() {
     lateinit var binding: ActivityLuckyModeBinding
     lateinit var card: Card
+    var cardCounter = 0
+    var score = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,15 +38,14 @@ class LuckyMode : AppCompatActivity() {
 
 
 
+        ObjLogic.showCards(binding.imageView6)
 
 
 
 
 
 
-
-
-        binding.imageView6.setImageResource(R.mipmap.defaultcard)
+       ObjLogic.shuffleCards(14)
 
 
 
@@ -55,7 +57,7 @@ class LuckyMode : AppCompatActivity() {
 
         //  Red button.
         binding.redButtonLucky.setOnClickListener {
-            binding.imageView6.setImageResource(card.cardValue)
+            guessCardColor("red")
 
 
         }
@@ -63,7 +65,7 @@ class LuckyMode : AppCompatActivity() {
 
         //  Black button.
         binding.blackButtonLucky.setOnClickListener {
-            binding.imageView6.setImageResource(card.cardValue)
+          guessCardColor("black")
 
 
         }
@@ -72,6 +74,32 @@ class LuckyMode : AppCompatActivity() {
 
     }
 
+
+    private fun guessCardColor(guessCard: String) {
+        if (ObjLogic.guessCards(guessCard)) {
+            cardCounter++
+            score++
+
+            ObjLogic.showCards(binding.imageView6)
+
+            if (cardCounter == 14) {
+                Toast.makeText(this, "You won!!", Toast.LENGTH_SHORT).show()
+                buttonFunction.finalwiningScreen(this, score)
+            } else {
+
+                Toast.makeText(this, "Correct guessed!!", Toast.LENGTH_SHORT).show()
+            }
+
+
+        } else {
+
+            Toast.makeText(this,"Wrong guessed!!", Toast.LENGTH_SHORT).show()
+            buttonFunction.loseActivity(this,score)
+
+        }
+
+
+    }
 
 
 
