@@ -1,0 +1,30 @@
+/build
+
+# Build directories
+/build/
+app/build/
+
+# Gradle files
+.gradle/
+/build.gradle.kts
+
+# Local configuration
+.idea/
+.DS_Store
+
+# Log files
+*.log
+
+# Android Studio specific files
+.classpath
+.project
+.settings/
+*.iml
+
+# Generated Files
+app/build/
+
+# Dependency caches
+*.jar
+*.war
+*.ear
