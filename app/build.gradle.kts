@@ -9,8 +9,8 @@ android {
 
     defaultConfig {
         applicationId = "com.example.redorblack"
-        minSdk = 26
-        targetSdk = 34
+        minSdk = 33
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -20,6 +20,7 @@ android {
     buildFeatures{
         viewBinding = true
     }
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -38,6 +39,9 @@ android {
     }
 }
 
+
+
+
 dependencies {
 
     implementation(libs.androidx.core.ktx)
@@ -48,4 +52,15 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation("io.coil-kt.coil3:coil-gif:3.0.4")
+
+
+
+
+
+
+
+
+
 }
