@@ -34,9 +34,6 @@
             android:name=".LoseScreen"
             android:exported="false" />
         <activity
-            android:name=".WinScreen"
-            android:exported="false" />
-        <activity
             android:name=".ModeOption"
             android:exported="false" />
         <activity
