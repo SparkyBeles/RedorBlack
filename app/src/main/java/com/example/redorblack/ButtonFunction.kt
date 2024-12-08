@@ -85,7 +85,7 @@ object buttonFunction {
 
 
     fun hardMode(context: Context) {
-        val hardIntent = Intent(context, EasyMode::class.java)
+        val hardIntent = Intent(context, HardMode::class.java)
         hardIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
         context.startActivity(hardIntent)
         if (context is Activity) {
@@ -95,7 +95,7 @@ object buttonFunction {
     }
 
     fun luckyMode(context: Context) {
-        val luckyIntent = Intent(context, EasyMode::class.java)
+        val luckyIntent = Intent(context, LuckyMode::class.java)
         luckyIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
         context.startActivity(luckyIntent)
         if (context is Activity) {

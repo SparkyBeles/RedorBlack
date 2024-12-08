@@ -10,7 +10,6 @@ import com.example.redorblack.databinding.ActivityHardModeBinding
 
 class HardMode : AppCompatActivity() {
     lateinit var binding: ActivityHardModeBinding
-    lateinit var card: Card
     var cardCounter = 0
     var score = 0
 
@@ -31,8 +30,8 @@ class HardMode : AppCompatActivity() {
             insets
         }
 
-        score = intent.getIntExtra("Score",score)
-        cardCounter = intent.getIntExtra("cardCounter",cardCounter)
+
+
 
 
 
@@ -81,6 +80,8 @@ class HardMode : AppCompatActivity() {
             score++
 
             ObjLogic.showCards(binding.imageView4)
+
+            binding.textView4.text = "Score: $score"
 
             if (cardCounter == 8) {
                 Toast.makeText(this, "You won!!", Toast.LENGTH_SHORT).show()

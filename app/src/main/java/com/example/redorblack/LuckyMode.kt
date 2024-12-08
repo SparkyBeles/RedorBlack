@@ -11,7 +11,6 @@ import com.example.redorblack.databinding.ActivityLuckyModeBinding
 
 class LuckyMode : AppCompatActivity() {
     lateinit var binding: ActivityLuckyModeBinding
-    lateinit var card: Card
     var cardCounter = 0
     var score = 0
 
@@ -81,6 +80,8 @@ class LuckyMode : AppCompatActivity() {
             score++
 
             ObjLogic.showCards(binding.imageView6)
+
+            binding.textView3.text = "Score: $score"
 
             if (cardCounter == 14) {
                 Toast.makeText(this, "You won!!", Toast.LENGTH_SHORT).show()

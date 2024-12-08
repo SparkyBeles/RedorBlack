@@ -49,7 +49,7 @@ class EasyMode : AppCompatActivity() {
 
 
 
-        binding.textView2.text = "Score: $score"
+
 
 
 
