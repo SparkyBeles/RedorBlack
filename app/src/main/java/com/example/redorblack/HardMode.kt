@@ -1,6 +1,7 @@
 package com.example.redorblack
 import android.content.pm.ActivityInfo
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -10,16 +11,21 @@ import com.example.redorblack.databinding.ActivityHardModeBinding
 
 class HardMode : AppCompatActivity() {
     lateinit var binding: ActivityHardModeBinding
-    lateinit var card: Card
+    lateinit var logic: Logic
     var cardCounter = 0
     var score = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-
         //  Screen Orientation lock on portrait.
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
+
+        logic = Logic()
+
+
+
+
 
 
         //  Binding method for finding ID.
@@ -31,24 +37,11 @@ class HardMode : AppCompatActivity() {
             insets
         }
 
-        score = intent.getIntExtra("Score",score)
-        cardCounter = intent.getIntExtra("cardCounter",cardCounter)
 
 
+        logic.shuffleCards(8)
 
 
-        ObjLogic.shuffleCards(8)
-
-
-
-
-
-
-
-
-
-
-       ObjLogic.showCards(binding.imageView4)
 
 
 
@@ -76,11 +69,12 @@ class HardMode : AppCompatActivity() {
 
 
     private fun guessCardColor(guessCard: String) {
-        if (ObjLogic.guessCards(guessCard)) {
+        if (logic.guessCards(guessCard)) {
             cardCounter++
             score++
 
-            ObjLogic.showCards(binding.imageView4)
+            binding.textView3.text = "Score: $score"
+            logic.showCards(binding.imageView4)
 
             if (cardCounter == 8) {
                 Toast.makeText(this, "You won!!", Toast.LENGTH_SHORT).show()

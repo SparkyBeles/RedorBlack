@@ -1,5 +1,4 @@
 package com.example.redorblack
-import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.widget.Toast
@@ -8,17 +7,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.redorblack.databinding.ActivityEasyModeBinding
-import kotlin.math.log
 
 
 class EasyMode : AppCompatActivity() {
     //  Global instance
     lateinit var binding: ActivityEasyModeBinding
+    private lateinit var logic: Logic
     var cardCounter = 0
     var score = 0
-
-
-
 
 
 
@@ -34,6 +30,10 @@ class EasyMode : AppCompatActivity() {
 
 
 
+       logic = Logic()
+
+
+
         //  Binding method for finding ID.
         binding = ActivityEasyModeBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -44,12 +44,15 @@ class EasyMode : AppCompatActivity() {
         }
 
 
-        //  First Image in imageview is a defaultCard without color.
-        ObjLogic.shuffleCards(4)
 
 
 
-        binding.textView2.text = "Score: $score"
+      logic.shuffleCards(5)
+
+
+
+
+
 
 
 
@@ -76,8 +79,8 @@ class EasyMode : AppCompatActivity() {
 
 
     private fun guessCardColor(guessCard: String) {
-        if (ObjLogic.guessCards(guessCard)) {
-            ObjLogic.showCards(binding.imageView)
+        if (logic.guessCards(guessCard)) {
+            logic.showCards(binding.imageView)
             cardCounter++
             score++
             binding.textView2.text = "Score: $score"

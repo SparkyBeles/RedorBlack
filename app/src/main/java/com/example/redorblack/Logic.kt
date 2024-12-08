@@ -1,10 +1,9 @@
 package com.example.redorblack
-
 import android.widget.ImageView
 
-open class Logic : CardManager() {
+ class Logic : CardManager() {
 
-    private val shuffledCard = mutableListOf<Card>()
+     private val shuffledCard = mutableListOf<Card>()
     private var currentCard = 0
 
 
@@ -14,8 +13,9 @@ open class Logic : CardManager() {
         shuffledCard.addAll(cardList.shuffled().take(cardAmount))
         currentCard = 0
 
-
     }
+
+
 
     //  Deal card method.
     fun dealCards(): Card? {
@@ -38,7 +38,7 @@ open class Logic : CardManager() {
             imageView.setImageResource(card.cardValue)
             imageView.postDelayed({
                 imageView.setImageResource(R.mipmap.defaultcard)
-            },1000)
+            },1)
 
             currentCard++
             true
