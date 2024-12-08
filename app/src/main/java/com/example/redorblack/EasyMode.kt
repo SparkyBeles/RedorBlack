@@ -1,5 +1,4 @@
 package com.example.redorblack
-import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.widget.Toast
@@ -8,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.redorblack.databinding.ActivityEasyModeBinding
-import kotlin.math.log
 
 
 class EasyMode : AppCompatActivity() {
@@ -44,7 +42,7 @@ class EasyMode : AppCompatActivity() {
         }
 
 
-        //  First Image in imageview is a defaultCard without color.
+
         ObjLogic.shuffleCards(4)
 
 
