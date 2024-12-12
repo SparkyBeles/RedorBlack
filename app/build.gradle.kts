@@ -53,9 +53,10 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    implementation("io.coil-kt.coil3:coil-gif:3.0.4")
 
 
+    //  Glide Gif
+    implementation(libs.glide)
 
 
 

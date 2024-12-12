@@ -9,18 +9,11 @@
     tools:context=".FinalWiningScreen">
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline80"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.36" />
-
-    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline78"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.28" />
+        app:layout_constraintGuide_percent="0.69" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline79"
@@ -69,6 +62,13 @@
         app:layout_constraintGuide_percent="0.43" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline64"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.61" />
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline87"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -104,6 +104,13 @@
         app:layout_constraintGuide_percent="0.87" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline65"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.76" />
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline76"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -114,17 +121,16 @@
         android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="Score: "
         android:autoSizeTextType="uniform"
-        android:textColor="@color/white"
         android:background="@mipmap/scoreboardi"
         android:fontFamily="@font/glitchgoblin"
-        app:layout_constraintBottom_toTopOf="@+id/guideline80"
-        app:layout_constraintEnd_toStartOf="@+id/guideline88"
-        app:layout_constraintStart_toStartOf="@+id/guideline87"
-        app:layout_constraintTop_toTopOf="@+id/guideline78"
+        android:text="Score: "
+        android:textColor="@color/white"
 
-        />
+        app:layout_constraintBottom_toTopOf="@+id/guideline65"
+        app:layout_constraintEnd_toStartOf="@+id/guideline64"
+        app:layout_constraintStart_toStartOf="@+id/guideline87"
+        app:layout_constraintTop_toTopOf="@+id/guideline78" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -132,9 +138,10 @@
         android:layout_height="378dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.532"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline80"
-        app:layout_constraintVertical_bias="0.222"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.467"
         app:srcCompat="@drawable/winner" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
