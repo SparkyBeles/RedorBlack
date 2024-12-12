@@ -5,6 +5,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.bumptech.glide.Glide
 import com.example.redorblack.databinding.ActivityFinalWiningScreenBinding
 
 class FinalWiningScreen : AppCompatActivity() {
@@ -39,7 +40,9 @@ class FinalWiningScreen : AppCompatActivity() {
 
 
         //  Trying to make the gif work.
-        binding.imageView5.setImageResource(R.drawable.winner)
+      val image =  binding.imageView5
+
+        Glide.with(this).load(R.drawable.winner).into(image)
 
 
 
