@@ -1,14 +1,18 @@
-package com.example.redorblack
+package com.example.redorblack.View
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.redorblack.databinding.ActivityAboutBinding
+import com.example.redorblack.R
+import com.example.redorblack.Utils.buttonFunction
+import com.example.redorblack.databinding.ActivityLoseScreenBinding
 
-class About : AppCompatActivity() {
-    lateinit var binding: ActivityAboutBinding
+class LoseScreen : AppCompatActivity() {
+
+    lateinit var binding: ActivityLoseScreenBinding
+    var score = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,7 +24,7 @@ class About : AppCompatActivity() {
 
 
         //  Binding method for finding ID.
-        binding = ActivityAboutBinding.inflate(layoutInflater)
+        binding = ActivityLoseScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -29,20 +33,35 @@ class About : AppCompatActivity() {
         }
 
 
+        score = intent.getIntExtra("Score",score)
 
 
-        // Dismiss button for the About view.
-        binding.dismissButton.setOnClickListener {
-         buttonFunction.dissMissButton(this)
+        //  Text view for the score.
+        binding.textViewLose.text = "Score: $score"
+
+
+
+
+
+
+
+        //  Green button Restart.
+        binding.button3.setOnClickListener {
+            buttonFunction.restartButton(this)
+
+
+        }
+
+
+        // Red button Quit.
+        binding.button4.setOnClickListener {
+            buttonFunction.quitButton(this)
+
         }
 
 
 
-
-
     }
-
-
 
 
 

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/brokenscreen"
-    tools:context=".FinalWiningScreen">
+    tools:context=".View.FinalWiningScreen">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline78"

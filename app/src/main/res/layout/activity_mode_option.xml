@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/backgroundcolor"
-    tools:context=".ModeOption">
+    tools:context=".View.ModeOption">
 
     <!-- horizontal guide line 1.0 -->
 

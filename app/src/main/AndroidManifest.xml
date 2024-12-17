@@ -11,33 +11,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Redorblack"
-        tools:targetApi="31">
+        >
 
 
 
         <activity
-            android:name=".LuckyMode"
+            android:name=".View.LuckyMode"
             android:exported="false" />
         <activity
-            android:name=".HardMode"
+            android:name=".View.HardMode"
             android:exported="false" />
         <activity
-            android:name=".EasyMode"
+            android:name=".View.EasyMode"
             android:exported="false" />
         <activity
-            android:name=".About"
+            android:name=".View.About"
             android:exported="false" />
         <activity
-            android:name=".FinalWiningScreen"
+            android:name=".View.FinalWiningScreen"
             android:exported="false" />
         <activity
-            android:name=".LoseScreen"
+            android:name=".View.LoseScreen"
             android:exported="false" />
         <activity
-            android:name=".ModeOption"
+            android:name=".View.ModeOption"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".View.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

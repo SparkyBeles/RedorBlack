@@ -1,17 +1,20 @@
-package com.example.redorblack
+package com.example.redorblack.View
 
-import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.redorblack.databinding.ActivityModeOptionBinding
+import com.example.redorblack.R
+import com.example.redorblack.Utils.buttonFunction
+import com.example.redorblack.databinding.ActivityMainBinding
 
-class ModeOption : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityModeOptionBinding
+    lateinit var binding: ActivityMainBinding
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,8 +25,11 @@ class ModeOption : AppCompatActivity() {
 
 
 
+
+
+
         //  Binding method for finding ID.
-        binding = ActivityModeOptionBinding.inflate(layoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -33,35 +39,32 @@ class ModeOption : AppCompatActivity() {
 
 
 
-        //  Easy mode button
-        binding.easyButtonMode.setOnClickListener {
-          buttonFunction.easyMode(this)
-
-        }
-
-
-
-        //  Hard mode button.
-        binding.hardButtonMode.setOnClickListener {
-          buttonFunction.hardMode(this)
-
-        }
-
-        //  Lucky mode button.
-        binding.luckyButtonMode.setOnClickListener {
-          buttonFunction.luckyMode(this)
-        }
 
 
 
 
 
-
-
+   // Start button
+    binding.startButton.setOnClickListener{
+        buttonFunction.restartButton(this)
     }
 
 
 
+    // Quit button
+    binding.quitButton.setOnClickListener{
+        buttonFunction.quitButton(this)
+    }
+
+
+    //  About button.
+    binding.aboutButton.setOnClickListener{
+        buttonFunction.aboutButton(this)
+    }
+
+
+
+    }
 
 
 

@@ -1,18 +1,21 @@
-package com.example.redorblack
+package com.example.redorblack.View
 
 import android.content.pm.ActivityInfo
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.ViewModelProvider
+import com.example.redorblack.R
+import com.example.redorblack.ViewModel.Logic
+import com.example.redorblack.Utils.buttonFunction
 import com.example.redorblack.databinding.ActivityLuckyModeBinding
 
 class LuckyMode : AppCompatActivity() {
     lateinit var binding: ActivityLuckyModeBinding
-    lateinit var logic: Logic
+    private lateinit var viewModel: Logic
     var cardCounter = 0
     var score = 0
 
@@ -23,7 +26,7 @@ class LuckyMode : AppCompatActivity() {
         //  Screen Orientation lock on portrait.
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
 
-        logic = Logic()
+       viewModel = ViewModelProvider(this).get(Logic::class.java)
 
 
 
@@ -40,7 +43,13 @@ class LuckyMode : AppCompatActivity() {
         }
 
 
-       logic.shuffleCards(14)
+        viewModel.currentCardLiveData.observe(this){card ->
+            card?.let {
+                binding.imageView6.setImageResource(card.cardValue)
+            }
+        }
+
+       viewModel.shuffleCards(14)
 
 
 
@@ -69,12 +78,11 @@ class LuckyMode : AppCompatActivity() {
 
 
     private fun guessCardColor(guessCard: String) {
-        if (logic.guessCards(guessCard)) {
+        if (viewModel.guessCards(guessCard)) {
             cardCounter++
             score++
 
             binding.textView4.text = "Score: $score"
-            logic.showCards(binding.imageView6)
 
             if (cardCounter == 14) {
                 Toast.makeText(this, "You won!!", Toast.LENGTH_SHORT).show()
@@ -88,7 +96,7 @@ class LuckyMode : AppCompatActivity() {
         } else {
 
             Toast.makeText(this,"Wrong guessed!!", Toast.LENGTH_SHORT).show()
-            buttonFunction.loseActivity(this,score)
+            buttonFunction.loseActivity(this, score)
 
         }
 

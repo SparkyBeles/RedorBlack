@@ -1,8 +1,16 @@
-package com.example.redorblack
+package com.example.redorblack.Utils
 
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import com.example.redorblack.View.About
+import com.example.redorblack.View.EasyMode
+import com.example.redorblack.View.FinalWiningScreen
+import com.example.redorblack.View.HardMode
+import com.example.redorblack.View.LoseScreen
+import com.example.redorblack.View.LuckyMode
+import com.example.redorblack.View.MainActivity
+import com.example.redorblack.View.ModeOption
 
 
 object buttonFunction {

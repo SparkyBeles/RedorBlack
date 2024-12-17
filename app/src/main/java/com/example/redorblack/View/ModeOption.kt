@@ -1,4 +1,4 @@
-package com.example.redorblack
+package com.example.redorblack.View
 
 import android.content.pm.ActivityInfo
 import android.os.Bundle
@@ -6,13 +6,13 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.redorblack.databinding.ActivityMainBinding
+import com.example.redorblack.R
+import com.example.redorblack.Utils.buttonFunction
+import com.example.redorblack.databinding.ActivityModeOptionBinding
 
-class MainActivity : AppCompatActivity() {
+class ModeOption : AppCompatActivity() {
 
-    lateinit var binding: ActivityMainBinding
-
-
+    lateinit var binding: ActivityModeOptionBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,11 +23,8 @@ class MainActivity : AppCompatActivity() {
 
 
 
-
-
-
         //  Binding method for finding ID.
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityModeOptionBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -37,32 +34,35 @@ class MainActivity : AppCompatActivity() {
 
 
 
+        //  Easy mode button
+        binding.easyButtonMode.setOnClickListener {
+            buttonFunction.easyMode(this)
+
+        }
+
+
+
+        //  Hard mode button.
+        binding.hardButtonMode.setOnClickListener {
+            buttonFunction.hardMode(this)
+
+        }
+
+        //  Lucky mode button.
+        binding.luckyButtonMode.setOnClickListener {
+            buttonFunction.luckyMode(this)
+        }
 
 
 
 
 
-   // Start button
-    binding.startButton.setOnClickListener{
-      buttonFunction.restartButton(this)
+
+
     }
 
 
 
-    // Quit button
-    binding.quitButton.setOnClickListener{
-        buttonFunction.quitButton(this)
-    }
-
-
-    //  About button.
-    binding.aboutButton.setOnClickListener{
-        buttonFunction.aboutButton(this)
-    }
-
-
-
-    }
 
 
 

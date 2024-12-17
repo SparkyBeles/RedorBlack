@@ -1,31 +1,28 @@
-package com.example.redorblack
+package com.example.redorblack.View
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.bumptech.glide.Glide
-import com.example.redorblack.databinding.ActivityFinalWiningScreenBinding
+import com.example.redorblack.R
+import com.example.redorblack.Utils.buttonFunction
+import com.example.redorblack.databinding.ActivityAboutBinding
 
-class FinalWiningScreen : AppCompatActivity() {
-
-    lateinit var binding: ActivityFinalWiningScreenBinding
-    var score = 0
+class About : AppCompatActivity() {
+    lateinit var binding: ActivityAboutBinding
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-
         //  Screen Orientation lock on portrait.
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
 
 
-
         //  Binding method for finding ID.
-        binding = ActivityFinalWiningScreenBinding.inflate(layoutInflater)
+        binding = ActivityAboutBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -34,38 +31,19 @@ class FinalWiningScreen : AppCompatActivity() {
         }
 
 
-        score = intent.getIntExtra("Score",0)
-        binding.textView.text = "Score: $score"
 
 
-
-        //  Trying to make the gif work.
-        val image = binding.imageView5
-
-        Glide.with(this).load(R.drawable.winner).into(image)
-
-
-
-
-
-
-
-
-        //  Restart button.
-        binding.button5.setOnClickListener {
-           buttonFunction.restartButton(this)
-
-
+        // Dismiss button for the About view.
+        binding.dismissButton.setOnClickListener {
+            buttonFunction.dissMissButton(this)
         }
 
 
-        //  Quit button.
-        binding.button6.setOnClickListener {
-            buttonFunction.quitButton(this)
 
-        }
+
 
     }
+
 
 
 

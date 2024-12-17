@@ -1,15 +1,18 @@
-package com.example.redorblack
+package com.example.redorblack.View
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.redorblack.databinding.ActivityLoseScreenBinding
+import com.bumptech.glide.Glide
+import com.example.redorblack.R
+import com.example.redorblack.Utils.buttonFunction
+import com.example.redorblack.databinding.ActivityFinalWiningScreenBinding
 
-class LoseScreen : AppCompatActivity() {
+class FinalWiningScreen : AppCompatActivity() {
 
-    lateinit var binding: ActivityLoseScreenBinding
+    lateinit var binding: ActivityFinalWiningScreenBinding
     var score = 0
 
 
@@ -17,12 +20,14 @@ class LoseScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
+
         //  Screen Orientation lock on portrait.
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
 
 
+
         //  Binding method for finding ID.
-        binding = ActivityLoseScreenBinding.inflate(layoutInflater)
+        binding = ActivityFinalWiningScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -31,35 +36,39 @@ class LoseScreen : AppCompatActivity() {
         }
 
 
-        score = intent.getIntExtra("Score",score)
-
-
-        //  Text view for the score.
-        binding.textViewLose.text = "Score: $score"
+        score = intent.getIntExtra("Score",0)
+        binding.textView.text = "Score: $score"
 
 
 
+        //  Trying to make the gif work.
+        val image = binding.imageView5
+
+        Glide.with(this).load(R.drawable.winner).into(image)
 
 
 
 
-        //  Green button Restart.
-        binding.button3.setOnClickListener {
+
+
+
+
+        //  Restart button.
+        binding.button5.setOnClickListener {
             buttonFunction.restartButton(this)
 
 
         }
 
 
-        // Red button Quit.
-        binding.button4.setOnClickListener {
-           buttonFunction.quitButton(this)
+        //  Quit button.
+        binding.button6.setOnClickListener {
+            buttonFunction.quitButton(this)
 
         }
 
-
-
     }
+
 
 
 
