@@ -2,11 +2,11 @@
 
 
 on:
-pull_request:
-branches:
+ pull_request:
+  branches:
       - main
       - dev
-paths-ignore:
+  paths-ignore:
     - '*.md'
 push:
     branches:
