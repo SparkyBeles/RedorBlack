@@ -28,3 +28,6 @@ app/build/
 *.jar
 *.war
 *.ear
+
+#Json
+google-services.json

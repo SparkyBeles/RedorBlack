@@ -1,0 +1,41 @@
+name: CI Test
+on:
+  pull_request:
+    branch:
+      - main
+      - dev
+    ignore-path:
+    - '*.md'
+  merge:
+    branch:
+      - main
+      - dev
+  ignore-path:
+    - '*.md'
+
+  jobs:
+    build:
+      runs-on: windows-latest
+      steps:
+        - uses: actions/checkout@V4
+          name:  Setup JDK
+        - uses:  actions/setup-java@V4
+          with:
+            java-version: '17'
+            distribution: 'zulu'
+            cache: gradle
+
+
+
+        - name: Google-Service-Json
+          env:
+            secret: ${secret}
+            shell: powershell
+            run: ./gradlew
+
+        - name: Dependencies list
+          run: ./gradlew :app:androidDependencies
+
+
+        - name: Build gradle
+          run: ./gradlew build
