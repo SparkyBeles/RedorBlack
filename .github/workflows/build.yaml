@@ -2,13 +2,13 @@
 
 
 on:
- pull_request:
+  pull_request:
   branches:
       - main
       - dev
   paths-ignore:
     - '*.md'
-push:
+  push:
     branches:
       - main
       - dev
@@ -19,13 +19,15 @@ jobs:
     build:
       runs-on: windows-latest
       steps:
+        - name: Checkout repo
         - uses: actions/checkout@v4
+
           name:  Setup JDK
         - uses:  actions/setup-java@v4
           with:
-            java-version: '17'
-            distribution: 'zulu'
-            cache: gradle
+          java-version: '17'
+          distribution: 'zulu'
+          cache: gradle
 
 
 
