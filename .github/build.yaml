@@ -1,25 +1,25 @@
 name: CI Test
 on:
   pull_request:
-    branch:
+    branches:
       - main
       - dev
-    ignore-path:
+    paths-ignore:
     - '*.md'
-  merge:
-    branch:
+  push:
+    branches:
       - main
       - dev
-  ignore-path:
+  paths-ignore:
     - '*.md'
 
   jobs:
     build:
       runs-on: windows-latest
       steps:
-        - uses: actions/checkout@V4
+        - uses: actions/checkout@v4
           name:  Setup JDK
-        - uses:  actions/setup-java@V4
+        - uses:  actions/setup-java@v4
           with:
             java-version: '17'
             distribution: 'zulu'
@@ -28,10 +28,7 @@ on:
 
 
         - name: Google-Service-Json
-          env:
-            secret: ${secret}
-            shell: powershell
-            run: ./gradlew
+          run: echo "${{ secrets.secret }}" | base64 --decode > app/google-services.json
 
         - name: Dependencies list
           run: ./gradlew :app:androidDependencies
