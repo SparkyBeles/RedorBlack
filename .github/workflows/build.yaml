@@ -1,0 +1,39 @@
+name: CI Test
+
+on:
+  pull_request:
+    branches:
+      - main
+      - dev
+    paths-ignore:
+      - '*.md'
+
+  push:
+    branches:
+      - main
+      - dev
+    paths-ignore:
+      - '*.md'
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'zulu'
+          cache: gradle
+
+      - name: Restore google-services.json
+        run: echo "${{ secrets.secret }}" | base64 --decode > app/google-services.json
+
+      - name: Dependencies list
+        run: ./gradlew :app:androidDependencies
+
+      - name: Build Gradle
+        run: ./gradlew build
